@@ -16,7 +16,7 @@ app.use(express.static('public'))
 
 // Main project routing
 app.get('/larp', (req, res) => res.sendFile(path.join(__dirname + '/views/larp.html')))
-
+app.get('/resources/update.js', (req, res) => res.sendFile(path.join(__dirname + '/views/update.js')))
 // Team activity routing
 app.get('/week10/form', (req, res) => res.sendFile(path.join(__dirname + '/views/index.html')))
 app.get('/week10/person/:id', getPerson)
