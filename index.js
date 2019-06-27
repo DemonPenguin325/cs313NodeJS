@@ -14,7 +14,7 @@ const pool = new Pool({connectionString: connectionString})
 // App routing
 app.use(express.static('public'))
 
-app.get('/form', (req, res) => res.sendFile(path.join(__dirname, '/views/index.html')))
+app.get('/form', (req, res) => res.sendFile(path.join(__dirname + '/views/index.html')))
 app.get('/person/:id', getPerson)
 app.get('/parents/:id', getParents)
 app.get('/children/:id', getChildren)
