@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>LARP Character Creator</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+    <script src="update.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+              <div class="navbar-header">
+                <a class="navbar-brand" href="#">Legends of Gerrar</a>
+              </div>
+              <ul class="nav navbar-nav">
+                  <!-- Set these li elements to have class "active" if we are on that page-->
+                <li>><a href="./index.php">Home</a></li>
+                <li><a href="./characters.php">Characters</a></li>
+<!-- If logged in as admin add the edit button (a tag in li element-->
+              </ul>
+              <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <!-- Set this login element to say "Welcome $NAME" if user is logged in -->
+                    <a href="./login.php"> Log in </a>
+                </li>
+              </ul>
+            </div>
+          </nav>
+    </header>
+    <!-- Side navigation -->
+    <div class="sidenav">
+        <h2 class="side-title"> Options</h2>
+        <div class="dropdown">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Race <span class="caret"></span></button>
+            <ul class="dropdown-menu">
+                <!-- Generate li links based on records in the database -->
+                <!-- echo '<li><a class="dropdown-item" href="#" onclick="addRace(\''.$name.'\')">'.ucfirst($name).'</a></li>'; -->
+
+                <!--<li><a class="dropdown-item" href="#" onclick="addRace('human')">Human</a></li>
+                <li><a class="dropdown-item" href="#" onclick="addRace('elf')">Elf</a></li>
+                <li><a class="dropdown-item" href="#" onclick="addRace('skeleton/ghost')">Undead</a></li> -->
+            </ul>
+        </div>
+        <div class="dropdown">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Class <span class="caret"></span></button>
+            <ul class="dropdown-menu">
+                <!-- Generate li links based on records in the database -->
+                <!-- echo '<li><a class="dropdown-item" href="#" onclick="setClass(\''.$name.'\')">'.ucfirst($name).'</a></li>'; -->
+
+            <!--<li><a class="dropdown-item" href="#" onclick="setClass('knight')">Knight</a></li>
+            <li><a class="dropdown-item" href="#" onclick="setClass('paladin')">Paladin</a></li>
+            <li><a class="dropdown-item" href="#" onclick="setClass('bard')">Bard</a></li> -->
+            </ul>
+        </div>
+        <div class="dropdown">
+            <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">Additional Rules <span class="caret"></span></button>
+            <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#" onclick="addRule('Rule 1')">Rule 1</a></li>
+            <li><a class="dropdown-item" href="#" onclick="addRule('Rule 2')">Rule 2</a></li>
+            <li><a class="dropdown-item" href="#" onclick="addRule('Rule 3')">Rule 3</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Page content -->
+    <div class="main">
+        <div class="row">
+            <div class="col-sm-3 box">
+                <h2 class="box-title">Race</h2>
+                <div id="race-info">
+                </div>
+            </div>
+            <div class="col-sm-1"></div> <!-- Buffer -->
+            <div class="col-sm-3 box">
+                <h2 class="box-title">Class</h2>
+                <div id="class-info">
+                </div>
+            </div>
+            <div class="col-sm-1"></div> <!-- Buffer -->
+            <div class="col-sm-3 box">
+                <h2 class="box-title">Stats</h2>
+                <div id="stats-info">
+                </div>
+            </div>
+            <!-- Covers the space for the side bar. Leave empty -->
+            <div class="col-sm-1"></div>
+        </div>
+    </div>
+</body>
+</html>
