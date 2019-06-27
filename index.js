@@ -14,10 +14,12 @@ const pool = new Pool({connectionString: connectionString})
 // App routing
 app.use(express.static('public'))
 
-app.get('/form', (req, res) => res.sendFile(path.join(__dirname + '/views/index.html')))
-app.get('/person/:id', getPerson)
-app.get('/parents/:id', getParents)
-app.get('/children/:id', getChildren)
+// Main project routing
+app.get('/larp', (req, res) => res.sendFile(path.join(__dirname + '/views/larp.html')))
+
+// Team activity routing
+app.get('/week10/form', (req, res) => res.sendFile(path.join(__dirname + '/views/index.html')))
+app.get('/week10/person/:id', getPerson)
 
 
 app.listen(port, () => console.log('App listening on port' + port))
@@ -39,12 +41,4 @@ pool.query(sql, [req.params.id], function(err, result) {
     //console.log(result.rows);
     res.send(result.rows[0]);
 });
-}
-
-function getParents(req, res){
-
-}
-
-function getChildren(req, res){
-    
 }
