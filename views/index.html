@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Form</title>
+</head>
+<body>
+    <form action="/person" method="get">
+        <input type="number" name="person_id" id="id">
+        <br>
+        <input type="button" value="Get Details" onclick="getData()">
+    </form>
+    <div id="dataDump">
+
+    </div>
+    <script>
+        function getData(){
+            var id = document.getElementById('id').value;
+            req = new XMLHttpRequest();
+            req.onreadystatechange = function() {
+                if (this.readyState == 4 && this.status == 200){
+                    document.getElementById('dataDump').innerHTML = req.responseText;
+                    console.log('Got the stuff')
+                }
+                else if (this.status == 404){
+                    console.log('cant find the file!')
+                }
+            };
+            req.open('GET', '/person/' + id , true)
+            req.send();
+        }
+    </script>
+</body>
+</html>
