@@ -1,6 +1,9 @@
 body{
     background-color: #3B4852;
 }
+h4{
+  color: whitesmoke;
+}
 
 /* The sidebar menu */
 .sidenav {
@@ -72,6 +75,9 @@ body{
   p.message{
     text-align: center;
     color: red;
+  }
+  #message{
+    display: none;
   }
   /* Style page content */
   .main {
